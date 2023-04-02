@@ -3,21 +3,20 @@ name: Android Unit Tests
 on: pull_request
 
 jobs:
-  build:
-    Unit-test:
-    name: Run unit tests on PR in main
-    runs-on: ubuntu-latest
+  Unit-test:
+  name: Run unit tests on PR in main
+  runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v3
+  steps:
+    - uses: actions/checkout@v3
 
-      - name: Set up JDK
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '11'
+    - name: Set up JDK
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '11'
 
-      - name: Change wrapper permissions
-        run: chmod +x ./gradlew
-      - name: Run Unit Tests
-        run: ./gradlew test
+    - name: Change wrapper permissions
+      run: chmod +x ./gradlew
+    - name: Run Unit Tests
+      run: ./gradlew test
