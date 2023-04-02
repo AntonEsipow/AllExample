@@ -4,6 +4,8 @@ on: pull_request
 
 jobs:
   build:
+    Unit-test:
+    name: Run unit tests on PR in main
     runs-on: ubuntu-latest
 
     steps:
